@@ -1,0 +1,66 @@
+---
+title: "Coursera - Building R Packages - Week 4 Assignment"
+author: "Sanjay Kansal"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Package Description
+This is a R package created as part of Coursera - Building R Packages course's week 4 assignment. It contains various functions for reading and analyzing data from Fatality AnalySys Reporting System (FARS) dataset: <http://www-fars.nhtsa.dot.gov/>.
+
+## Package functions
+### The functions need one or more of the following packages to be imported:
+
+* readr
+* dplyr
+* tidyr
+* maps
+* graphics
+
+
+### Function: fars_read - Reads and Loads a CSV file
+This function reads a CSV file with the name passed as an argument in the argument <filename>. It returns a data frame with the data read from the file.
+
+#### Example Usage
+* fars_read("accident_2013.csv.bz2")
+* fars_read("accident_2014.csv.bz2")
+
+### Function: make_filename - Creates a filename
+This function takes in an argument for a year in the format yyyy and generates a file name in the format accident_<yyyy>.csv.bz2.
+
+#### Example Usage
+* make_filename(2013)
+* make_filename(2014)
+
+### Function: fars_read_years - Produces a list of month,year from the read data
+This function takes in an argument of a vector of years with each year in the format yyyy and generates a list containing month,year for each month year combinations in the data from the read CSv file.
+
+#### Exanmple usage
+* fars_read_years(2013:2015)
+* fars_read_years(c(2013, 2015))
+
+### Function: fars_summarize_years - Summarizes number of accidents by month and year
+This function takes in an argument of a vector of years with each year in the format yyyy and generates a summary of accidents by month and each year passed in the argument years.
+
+#### Example usage and output
+* fars_summarize_years(2013:2015)
+* fars_summarize_years(c(2013, 2015))
+
+
+### Function: fars_map_state - Generates a plot of all the accidents for a state and year combination
+This function takes in an argument of a vector of years with each year in the format yyyy and generates a summary of accidents by month and each year passed in the argument years.
+
+#### Exanmple usage and output
+* fars_map_state(1, 2013)
+* fars_map_state(10, 2014)

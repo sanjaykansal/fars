@@ -7,4 +7,4 @@ output: html_document
 
 This is a R package created as part of Coursera - Building R Packages course's week 4 assignment. It contains various functions for reading and analyzing data from Fatality AnalySys Reporting System (FARS) dataset: <http://www-fars.nhtsa.dot.gov/>.
 
-https://travis-ci.org/sanjaykansal/fars.svg?branch=master
+[![Build Status](https://travis-ci.org/sanjaykansal/fars.svg?branch=master)](https://travis-ci.org/sanjaykansal/fars)
